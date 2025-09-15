@@ -8,13 +8,15 @@ import turtle
 
 import turtle
 wn=turtle.Screen()
-wn.bgcolor('lightgreen')
+alex = turtle.Turtle()
+for i in ["yellow","red","blue","green","purple"]:
+    alex.color(i)
+    alex.forward(50)
+    alex.left(90)
+
+
+
 wn.exitonclick()
-tess=turtle.Turtle()
-tess.color('hotpink')
-tess.pensize(5)
-alex=turtle.Turtle()
-tess.forward(80)
-tess.left(
-    
-)
+
+
+
