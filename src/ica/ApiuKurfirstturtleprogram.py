@@ -7,7 +7,7 @@ import turtle
 import turtle
 
 import turtle
-wn=turtle.Screen()
+"""wn=turtle.Screen()
 alex = turtle.Turtle()
 for i in ["yellow","red","blue","green","purple"]:
     alex.color(i)
@@ -16,7 +16,26 @@ for i in ["yellow","red","blue","green","purple"]:
 
 
 
+wn.exitonclick()"""
+def drawRectangle(t,w,h):
+    for i in range(2):
+        t.forward(w)
+        t.left(90)
+        t.forward(h)
+        t.left(90)
+
+def drawsquare(tx,sz):
+    drawRectangle(tx,sz,sz)
+wn=turtle.Screen()
+wn.bgcolor("black")
+tess=turtle.Turtle()
+tess.color("white")
+drawsquare(tess,100)
+drawRectangle(tess,150,10)
 wn.exitonclick()
+
+
+
 
 
 
