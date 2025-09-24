@@ -1,5 +1,6 @@
-def printpaisr(n,m):
-  for i in range(n):
+def printpaisr(m,n):
+    for i in range(n):
       for j in range(m):
-          print(" ", i,j,")")
-     
+          print(" i, j")
+
+printpaisr(3,2)

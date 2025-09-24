@@ -31,35 +31,39 @@ def drawAll():
     """middle flower"""
     draw_fivecircles(sepalTurtle, 50, 0, 0)
     draw_fivecircles(petalTurtle, 25, 0, 0)
+    draw_center(centerTurtle, 0, -15)
+    draw_bee(stampTurtle, -2, 0)
+
     """first flower"""
     draw_fivecircles(sepalTurtle, 50, 0, 220)
     draw_fivecircles(petalTurtle, 25, 0, 220)
+    draw_center(centerTurtle, 0, 205)
+    draw_bee(stampTurtle, -2, 220)
+
     """Right flower"""
     draw_fivecircles(sepalTurtle, 50, 220, 0)
     draw_fivecircles(petalTurtle, 25, 220, 0)
+    draw_center(centerTurtle, 220, -15)
+    draw_bee(stampTurtle, 218, 0)
+
     """bottom flower"""
     draw_fivecircles(sepalTurtle, 50, 0, -220)
     draw_fivecircles(petalTurtle, 25, 0, -220)
+    draw_center(centerTurtle, 0, -235)
+    draw_bee(stampTurtle, -2, -220)
+
     """left flower"""
     draw_fivecircles(sepalTurtle, 50, -220, 0)
     draw_fivecircles(petalTurtle, 25, -220, 0)
-
-    draw_center(centerTurtle, 0, -15)
-    draw_center(centerTurtle, 0, 205)
-    draw_center(centerTurtle, 220, -15)
-    draw_center(centerTurtle, 0, -235)
     draw_center(centerTurtle, -220, -15)
-
-    draw_bee(stampTurtle, -2, 0)
-    draw_bee(stampTurtle, -2, 220)
-    draw_bee(stampTurtle, 218, 0)
-    draw_bee(stampTurtle, -2, -220)
     draw_bee(stampTurtle, -222, 0)
+
+
 
     win.exitonclick()
 
 
-def drawcircle(sepalTurtle,petalTurtle,centerTurtle,stampTurtle,centerx,centery):
+def drawcircle(st,pt,cy,st2,r,cx,xy):
     """In this code above calls the functions that draws the various sections of the flower in the five of them"""
     draw_fivecircles(sepalTurtle, 50, 0, 0)
     draw_fivecircles(petalTurtle, 25, 0, 0)
