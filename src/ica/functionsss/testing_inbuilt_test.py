@@ -55,7 +55,8 @@ tess.pensize(3)
 
 
 
-
+for a in xs:
+    drawBar(tess, a)
 
 wn.exitonclick()
 
