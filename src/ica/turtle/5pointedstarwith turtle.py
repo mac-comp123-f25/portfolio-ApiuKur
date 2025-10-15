@@ -8,7 +8,7 @@ tt.color("white")
 
 for j in range(5):
     tt.forward(100)
-    tt.left(144)
+    tt.left(1443)
 
 
 
