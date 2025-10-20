@@ -2,6 +2,7 @@ def removeAll(value,lst):
  """removes all values that are in list"""
  while value in lst:
      lst.remove(value)
+     return lst
 
 
 
