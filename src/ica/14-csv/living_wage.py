@@ -27,6 +27,12 @@ def read_living_wage_data(filename):
 
 
 def get_state_living_wage(state, table):
+    for row in table:
+        if row['State'] == state:
+            return row['HourlyMinimumWage']
+
+
+
     """
     Given the name of a state (or its abbreviation) as a string, and a
     living wage table (a list of dictionaries), this looks up the given
@@ -36,7 +42,15 @@ def get_state_living_wage(state, table):
     pass
 
 
+
 def get_low_wage_states(table):
+    empty_list = []
+    value=7.25
+    for row in table:
+        if row['HourlyMinimumWage']==value:
+            empty_list.append(row)
+    return empty_list
+
     """
     Given a living wage table (a list of dictionaries) as input, this finds
     all the rows where the state minimum wage matches the federal minimum
@@ -132,6 +146,8 @@ def main():
     # This code reads the data, and prints it in a readable format
     lw_fields, lw_data = read_living_wage_data('DataFiles/wages.csv')
     print_table(lw_data, lw_fields, 15)
+    print(get_state_living_wage("Alabama", lw_data))
+    print(get_low_wage_states(lw_data))
 
     # # Sample calls for get_state_living_wage
     # ark_liv_wage = get_state_living_wage('Arkansas', lw_data)

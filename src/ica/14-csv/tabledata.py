@@ -77,11 +77,37 @@ def daylight_hours(rise_hour, rise_min, set_hour, set_min):
     return hour_diff
 
 
+def average_daylight_time(table):
+    count = 0
+    for row in table:
+        rise_hour = int(row['SunRiseHour'])
+        rise_min = int(row['SunRiseMin'])
+        set_hour = int(row['SunSetHour'])
+        set_min = int(row['SunSetMin'])
+        daylight_hour=daylight_hours(rise_hour, rise_min, set_hour, set_min)
+        count+=daylight_hour
+    return count/len(table)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def main():
     print(lookup_phone('Fox, Susan', directory))
     print(lookup_phone('Shoop, Libby', directory))
 
     field_names, sun_table = read_csv("DataFiles/sunRiseSet.csv")
+    print(average_daylight_time(sun_table))
     print(field_names)
     print(sun_table[0])  # printing just the first row of data
     print_table(sun_table, field_names, 15)
