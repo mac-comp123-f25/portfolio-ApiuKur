@@ -205,3 +205,8 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+src/welcome/people.csv
+src/welcome/testing.py
+src/turtleacademytrials/practice_read.py
+src/turtleacademytrials/abbrev.txt
+src/ica/09-strings/fractal/fractal_vis.py
