@@ -4,6 +4,7 @@ This script read, analyze, and visualize the living wage dataset
 @author: Susan Fox
 @author: Amin G. Alhashim (aalhashi@macalester.edu)
 """
+from numpy import sort
 
 from helpers import *
 import matplotlib.pyplot as plt
@@ -62,12 +63,24 @@ def get_low_wage_states(table):
 
 
 def get_expensive_states(table):
+
+
     """
     Given a living wage table (a list of dictionaries) as an input,
     this finds the 5 states with the highest living wage. It returns a list
     of the five state names
     """
     # TODO: finish this function
+
+
+    empty_list = []
+
+    sorted_table= sorted(table,key=lambda row: row['AnnualLivingWage'],reverse=True)#reverse true sorts in descending orer
+    most_expensive = sorted_table[0]
+    return most_expensive['AnnualLivingWage']
+
+
+
     pass
 
 
@@ -148,6 +161,8 @@ def main():
     print_table(lw_data, lw_fields, 15)
     print(get_state_living_wage("Alabama", lw_data))
     print(get_low_wage_states(lw_data))
+    print(get_expensive_states(lw_data))
+
 
     # # Sample calls for get_state_living_wage
     # ark_liv_wage = get_state_living_wage('Arkansas', lw_data)
