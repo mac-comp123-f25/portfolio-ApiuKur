@@ -122,7 +122,32 @@ def get_gap_states(table):
     return gap_states
 
 
-    pass
+def  print_gap_states(gaps_states,table):
+     get_states=get_gap_states(table)
+     print(table)
+     empty_list=[]
+     list_columns = table[0].keys()
+
+
+
+
+
+     for row  in table:
+          if row['State'] in get_states:
+              empty_list.append(row)
+     all_tables=print_table(empty_list,list_columns)
+     return all_tables
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Visualizing data
@@ -177,6 +202,8 @@ def main():
     print(get_low_wage_states(lw_data))
     print(get_expensive_states(lw_data))
     print(get_gap_states(lw_data))
+    print("working here:")
+    print_gap_states(lw_data,lw_data)
 
 
 
