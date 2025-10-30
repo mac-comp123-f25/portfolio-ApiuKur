@@ -85,6 +85,7 @@ def get_expensive_states(table):
 
 
 def annual_wage(hourly_wage):
+
     """
     Given an hourly wage earned by one person, this computes how much a
     family with two earners making that wage could make.
@@ -94,6 +95,9 @@ def annual_wage(hourly_wage):
     * Each worker works 52 weeks per year (no vacation time!)
     """
     # TODO: finish this function
+    value = 2080
+    annuall_wage = hourly_wage * value * 2
+    return annuall_wage
     pass
 
 
