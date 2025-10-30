@@ -102,6 +102,7 @@ def annual_wage(hourly_wage):
 
 
 def get_gap_states(table):
+
     """
     Given a living wage table (a list of dictionaries) as an input,
     this determines the states that have a gap between what minimum wage
@@ -110,8 +111,17 @@ def get_gap_states(table):
     52 weeks (2080 hours per year), you can calculate the annual salary
     earned at minimum wage.  Find the states where the annual salary at
     minimum wage is less than the living wage.
+
     """
     # TODO: finish this function
+    gap_states = []
+    for row in table:
+        annual_wages=annual_wage(row['HourlyMinimumWage'])
+        if annual_wages < row['AnnualLivingWage']:
+            gap_states.append(row["State"])
+    return gap_states
+
+
     pass
 
 
@@ -166,6 +176,9 @@ def main():
     print(get_state_living_wage("Alabama", lw_data))
     print(get_low_wage_states(lw_data))
     print(get_expensive_states(lw_data))
+    print(get_gap_states(lw_data))
+
+
 
 
     # # Sample calls for get_state_living_wage
