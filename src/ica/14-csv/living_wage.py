@@ -138,18 +138,6 @@ def  print_gap_states(gaps_states,table):
      all_tables=print_table(empty_list,list_columns)
      return all_tables
 
-
-
-
-
-
-
-
-
-
-
-
-
 # Visualizing data
 def vis_gaps(table):
     """
@@ -157,17 +145,29 @@ def vis_gaps(table):
     state-by-state plot of the annual earnings of a family of minimum-wage workers, compared to the annual living wage
     for that state.
     """
-
+    state_AMW = []
+    state_ALW = []
     # state names
     state_abbrevs = []
+    for state in table:
+       state_name = state['State']
+       state_abbrev=state_name[:2]
+       state_uppers=state_abbrev.upper()
+       state_abbrevs.append(state_uppers)
+       hourly_wage = state["HourlyMinimumWage"]
+       minimun_anual = annual_wage(hourly_wage)
+       state_AMW.append(minimun_anual)
+       state_annual_wage=state["AnnualLivingWage"]
+       state_ALW.append(state_annual_wage)
+
     # TODO: build the list
 
     # yearly minimum wage earnings for family with two minimum-wage workers
-    state_AMW = []
+
     # TODO: build the list
 
     # yearly living wage earnings by state
-    state_ALW = []
+
     # TODO: build the list
 
     # set up plot
@@ -204,6 +204,7 @@ def main():
     print(get_gap_states(lw_data))
     print("working here:")
     print_gap_states(lw_data,lw_data)
+    print(vis_gaps(lw_data))
 
 
 
