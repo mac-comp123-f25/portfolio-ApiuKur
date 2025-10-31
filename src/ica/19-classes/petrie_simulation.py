@@ -58,10 +58,13 @@ def print_employee_list(lst):
     by using the print() method
     """
     # TODO: Implement this function then remove this line
-    pass
+    for employee in lst:
+        print(employee)
+
 
 
 def create_employees(total_num):
+
     """
     Takes in the number of employees to make, builds and returns a list that contains
     that many employees. It ensures that ~80% are men and the rest women.
@@ -138,6 +141,7 @@ if __name__ == "__main__":
 
     "<----- Test code for average_comments ----->"
     print(average_comments(employees))
+
 
     "<----- Run the simulation ----->"
     # main()  # <-- KEEP THIS, Uncomment it after implementing all the functions
