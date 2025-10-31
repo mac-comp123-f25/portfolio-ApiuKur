@@ -13,7 +13,11 @@ class Employee:
     towards the other gender.
     """
 
-    def __init__(self, gender: str, will_comment):
+    def __init__(self, gender: str, will_comment:bool):
+
+        self.gender = gender
+        self.will_comment = will_comment
+        self.comments_received=0
         """
         Takes in the employee's gender and whether they comment, and it
         saves those values to instance variables. It also initializes the
@@ -29,7 +33,23 @@ class Employee:
         return (self.gender.rjust(5)
                 + ": "
                 + str(self.comments_received)
-                + " sexist comments received")
+                + " sexist comments received"
+                + ": "
+                + str(self.will_comment)
+                + "status of the comment posted")
+
+    def set_commenter_status(self,status):
+        self.will_comment = status
+
+    def receive_sexist_comment(self):
+         self.comments_received+=1
+
+    def get_gender(self):
+       return self.gender
+    def get_commenter_status(self):
+        return self.status
+    def get_comments_received(self):
+        return self.comments_received
 
 
 def print_employee_list(lst):
