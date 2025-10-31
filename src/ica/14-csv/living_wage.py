@@ -30,7 +30,7 @@ def read_living_wage_data(filename):
 def get_state_living_wage(state, table):
     for row in table:
         if row['State'] == state:
-            return row['HourlyMinimumWage']
+            return row['AnnualLivingWage']
 
 
 
@@ -258,7 +258,7 @@ def main():
     print(get_expensive_states(lw_data))
     print(get_gap_states(lw_data))
     print("working here:")
-    print_gap_states(lw_data,lw_data)
+    print(print_gap_states(lw_data,lw_data))
     print(vis_gaps(lw_data))
     print(select_state_gap(lw_data))
 
