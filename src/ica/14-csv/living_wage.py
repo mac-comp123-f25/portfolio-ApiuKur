@@ -193,6 +193,61 @@ def vis_gaps(table):
     plt.show()                 # Display final chart and wait for user to close window
 
 
+def select_state_gap(table):
+    """
+    This function takes one input: the sunTable of data (list of dictionaries). It uses matplotlib to display a
+    state-by-state plot of the annual earnings of a family of minimum-wage workers, compared to the annual living wage
+    for that state.
+    """
+    state_AMW = []
+    state_ALW = []
+    # state names
+    state_abbrevs = []
+    for state in table:
+       state_name = state['State']
+       state_abbrev=state_name[:2]
+       state_uppers=state_abbrev.upper()
+       state_abbrevs.append(state_uppers)
+       hourly_wage = state["HourlyMinimumWage"]
+       minimun_anual = annual_wage(hourly_wage)
+       state_AMW.append(minimun_anual)
+       state_annual_wage=state["AnnualLivingWage"]
+       state_ALW.append(state_annual_wage)
+       differencess=state_annual_wage-minimun_anual
+
+    # TODO: build the list
+
+    # yearly minimum wage earnings for family with two minimum-wage workers
+
+    # TODO: build the list
+
+    # yearly living wage earnings by state
+
+    # TODO: build the list
+
+    # set up plot
+    plt.figure(figsize=(12.0, 4.0))     # Create figure 12" wide and 4" tall
+    bar_width = 2.0     # Set the bar width to 2 units wide
+    opacity = 0.8       # Set opacity to 0.8
+    positions = np.arange(50) * (3 * bar_width)  # Create positions for each bar, allowing for two bars and a gap
+
+    # Create and place bars for annual minimum wage data (blue) and living wage data (green)
+    plt.bar(positions,  state_AMW,
+            bar_width, alpha=opacity, color='blue', label='Minimum Wage')
+    plt.bar(positions + bar_width,  state_ALW,
+            bar_width, alpha=opacity, color='green', label='Living Wage')
+
+    # Set up other features of chart
+    plt.xlabel('States')                                       # Set label on x-axis
+    plt.ylabel('Yearly Salary ($)')                            # Set label on y-axis
+    plt.title('Living and Minimum Wage in Top 10 Gap States')  # Set title of chart
+    plt.xticks(positions + (bar_width/2), differencess)       # Set ticks and label with state abbreviations
+    plt.legend()                                               # Include a legend for the data
+
+    plt.tight_layout()         # Don't waste space in chart window
+    plt.show()
+
+
 # Main program
 def main():
     # This code reads the data, and prints it in a readable format
@@ -205,6 +260,7 @@ def main():
     print("working here:")
     print_gap_states(lw_data,lw_data)
     print(vis_gaps(lw_data))
+    print(select_state_gap(lw_data))
 
 
 
