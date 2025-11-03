@@ -64,6 +64,23 @@ def print_employee_list(lst):
 
 
 def create_employees(total_num):
+    women_employees=80/100*total_num
+    men_employees=20/100*total_num
+    women_rounded=math.floor(women_employees)
+    men_rounded=math.floor(men_employees)
+    man_instance=Employee("Man",False)
+    woman_instance=Employee("Woman",False)
+    women_list=[]
+    men_list=[]
+    for woman in range(women_rounded):
+        women_list.append(woman_instance)
+    for man in range(men_rounded):
+        men_list.append(man_instance)
+    combined_list=men_list+women_list
+    return combined_list
+
+
+
 
     """
     Takes in the number of employees to make, builds and returns a list that contains
@@ -79,6 +96,12 @@ def create_commenters(lst):
     method should not return anything.
     """
     # TODO: Implement this function then remove this line
+    for employee in lst:
+        value=random.random()
+        if value<0.2:
+            employee.set_commenter_status(True)
+
+
     pass
 
 
@@ -89,10 +112,35 @@ def generate_comments(lst):
     not return anything
     """
     # TODO: Implement this function then remove this line
+    emptymen_list=[]
+    empty_wome_list=[]
+    for person in lst:
+        if person.gender=="Man":
+            emptymen_list.append(person)
+            if person.set_commenter_status(True):
+                person = random.choice(emptymen_list)
+                person.comments_received += 1
+
+
+
+
+        else:
+            empty_wome_list.append(person)
+            if person.set_commenter_status(True):
+                person=random.choice(emptymen_list)
+                person.comments_received+=1
+
+
+
+
     pass
 
 
 def average_comments(lst):
+    list_comment_male=[]
+    list_comments_female=[]
+    for comment in list:
+        
     """
     Returns a tuple that represents the average amount of comments received for men and women
     respectively. Return statement will be in the form (<avg_for_men>, <avg_for_women>)
@@ -141,6 +189,7 @@ if __name__ == "__main__":
 
     "<----- Test code for average_comments ----->"
     print(average_comments(employees))
+    print(create_employees(100).__str__())
 
 
     "<----- Run the simulation ----->"
