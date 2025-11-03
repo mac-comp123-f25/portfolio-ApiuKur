@@ -47,7 +47,7 @@ class Employee:
     def get_gender(self):
        return self.gender
     def get_commenter_status(self):
-        return self.status
+        return self.will_comment
     def get_comments_received(self):
         return self.comments_received
 
@@ -73,8 +73,10 @@ def create_employees(total_num):
     women_list=[]
     men_list=[]
     for woman in range(women_rounded):
+        woman_instance = Employee("Woman", False)
         women_list.append(woman_instance)
     for man in range(men_rounded):
+        man_instance = Employee("Man", False)
         men_list.append(man_instance)
     combined_list=men_list+women_list
     return combined_list
@@ -117,8 +119,8 @@ def generate_comments(lst):
     for person in lst:
         if person.gender=="Man":
             emptymen_list.append(person)
-            if person.set_commenter_status(True):
-                person = random.choice(emptymen_list)
+            if person.get_commenter_status()==True:
+                person = random.choice(lst)
                 person.comments_received += 1
 
 
@@ -126,8 +128,8 @@ def generate_comments(lst):
 
         else:
             empty_wome_list.append(person)
-            if person.set_commenter_status(True):
-                person=random.choice(emptymen_list)
+            if person.get_commenter_status()==True:
+                person=random.choice(lst)
                 person.comments_received+=1
 
 
@@ -139,8 +141,17 @@ def generate_comments(lst):
 def average_comments(lst):
     list_comment_male=[]
     list_comments_female=[]
-    for comment in list:
-        
+    for employee in lst:
+        if employee.gender=="Woman":
+            list_comments_female.append(employee.comments_received)
+        else:
+            list_comment_male.append(employee.comments_received)
+    average_value_male=sum(tuple(list_comment_male))/len(list_comment_male)
+    average_value_female=sum(tuple(list_comments_female))/len(list_comments_female)
+    return average_value_female,average_value_male
+
+
+
     """
     Returns a tuple that represents the average amount of comments received for men and women
     respectively. Return statement will be in the form (<avg_for_men>, <avg_for_women>)
@@ -189,7 +200,6 @@ if __name__ == "__main__":
 
     "<----- Test code for average_comments ----->"
     print(average_comments(employees))
-    print(create_employees(100).__str__())
 
 
     "<----- Run the simulation ----->"
