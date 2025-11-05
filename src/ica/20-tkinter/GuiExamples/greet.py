@@ -21,6 +21,7 @@ class BasicGui:
         self.welcome.grid(column=1, row=1)
         self.guiButton["command"] = self.quit_callback
         self.guiButton2["command"]=self.Hellobutton
+        self.guiButton3["command"]=self.goodbyebutton
 
 
 
@@ -35,6 +36,8 @@ class BasicGui:
 
     def Hellobutton(self):
         self.guiButton2.config(text="Hey")
+    def goodbyebutton(self):
+        self.guiButton3.config(text="Goodbyes")
 
 
 
