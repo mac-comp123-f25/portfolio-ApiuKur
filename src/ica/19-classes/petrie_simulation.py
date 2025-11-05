@@ -65,7 +65,7 @@ def print_employee_list(lst):
 
 def create_employees(total_num):
     women_employees=80/100*total_num
-    men_employees=20/100*total_num
+    men_employees=total_num-women_employees
     women_rounded=math.floor(women_employees)
     men_rounded=math.floor(men_employees)
     man_instance=Employee("Man",False)
@@ -80,18 +80,12 @@ def create_employees(total_num):
         men_list.append(man_instance)
     combined_list=men_list+women_list
     return combined_list
-
-
-
-
     """
     Takes in the number of employees to make, builds and returns a list that contains
     that many employees. It ensures that ~80% are men and the rest women.
     """
     # TODO: Implement this function then remove this line
     pass
-
-
 def create_commenters(lst):
     """
     Given a list of employees, make 20% of each gender be sexist employees. This
@@ -102,10 +96,7 @@ def create_commenters(lst):
         value=random.random()
         if value<0.2:
             employee.set_commenter_status(True)
-
-
     pass
-
 
 def generate_comments(lst):
     """
@@ -122,9 +113,6 @@ def generate_comments(lst):
             if person.get_commenter_status()==True:
                 person = random.choice(lst)
                 person.comments_received += 1
-
-
-
 
         else:
             empty_wome_list.append(person)
