@@ -35,7 +35,7 @@ class BasicGui:
 
 
     def Hellobutton(self):
-        self.guiButton2.config(text="Hey")
+        self.guiButton2.config(text="Hellos")
     def goodbyebutton(self):
         self.guiButton3.config(text="Goodbyes")
 
