@@ -29,12 +29,6 @@ class BasicGui:
         self.entry.delete(0,tk.END)
         self.entry.insert(0,reversed_string)
 
-
-
-
-
-
-
 # ----- Main program -----
 myGui = BasicGui()
 myGui.run()

@@ -26,7 +26,7 @@ class BasicGui:
         self.rootWin.bind("<Left>", self.move_callback)
         self.rootWin.bind("<Right>", self.move_callback)
 
-        # Force focus to root window
+
         self.rootWin.focus_set()
 
 
