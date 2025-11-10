@@ -31,7 +31,7 @@ colors = "red", "blue", "yellow", "pink", "maroon"
 colorzz = random.choice(colors)
 choice_of_turtles = random.choice(turtle_list)
 
-speed=random.choice(list_of_speed)
+
 
 
 
@@ -43,13 +43,10 @@ line.right(90)
 line.pendown()
 line.forward(400)
 
-
-
-
 def turtle_race(turtle_list, finish_x):
     racing = True
     winner = None
-    while racing:
+    while racing==True:
         for t in turtle_list:
             step = random.randint(1, 10)
             t.forward(step)
