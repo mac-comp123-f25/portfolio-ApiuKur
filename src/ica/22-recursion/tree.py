@@ -9,6 +9,7 @@ def check_draw_tree(sz):
     win = tk.Toplevel()
     win.title(f"Tree Fractal {sz}")
     win_size = sz * 7
+
     cv = tk.Canvas(win, width=win_size, height=win_size)
     cv.pack()
     ts = turtle.TurtleScreen(cv)

@@ -16,7 +16,7 @@ def check_draw_levy(size: float, reps: int) -> None:
     """Tester function for the draw_levy"""
 
     # setup window
-    win = tk.Toplevel()
+    win = tk.Tk()
     win.title(f"Levy C Fractal {reps}")
     win_size = size * 7
     cv = tk.Canvas(win, width=win_size, height=win_size)
@@ -38,6 +38,19 @@ def check_draw_levy(size: float, reps: int) -> None:
 
 # TODO: Complete the function
 def draw_levy(turt, size, reps):
+    if reps==1:
+        turt.forward(size)
+    else:
+        length=calc_next_size(size)
+        turt.left(45)
+        draw_levy(turt,length,reps-1)
+        turt.right(90)
+        draw_levy(turt,length,reps-1)
+        turt.left(45)
+
+
+
+
     ...
 
 
