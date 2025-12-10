@@ -22,6 +22,7 @@ def draw_rhombus(turt,center,width,color):
 
 
  turt.color(color)
+ turt.speed(0)
  turt.penup()
  turt.goto(center[0],center[1])
  turt.pendown()
@@ -105,7 +106,7 @@ def draw_wheel_animation(turt,radius):
 
     turt.penup()
 
-    turt.goto(40, 27)
+    turt.goto(-40, 27)
     turt.pendown()
 
     for i in range(5):
@@ -119,9 +120,9 @@ def draw_wheel_animation(turt,radius):
     turt.pendown()
     turt.circle(radius)
 
-    
 
-draw_wheel_animation(turt3,50)
+
+#draw_wheel_animation(turt3,50)
 
 
 
