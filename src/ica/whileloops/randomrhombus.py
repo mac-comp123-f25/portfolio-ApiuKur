@@ -58,7 +58,7 @@ for z in range(nmbeoftimes):
 
 
 
-  #draw_rhombus(turt1,center=(x,y),width=random.randint(10,20),color=random.choice(['red','green','blue']))
+  draw_rhombus(turt1,center=(x,y),width=random.randint(10,20),color=random.choice(['red','green','blue']))
 
 def draw_hexagon(turtt,length,angle):
   for i in range(6):
